@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inlogpagina</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      width: 300px;
+      padding: 2rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+    }
+    button {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .error {
+      color: red;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Inloggen</h2>
+    <input type="text" id="username" placeholder="Gebruikersnaam" required>
+    <input type="password" id="password" placeholder="Wachtwoord" required>
+    <button onclick="login()">Inloggen</button>
+    <div id="error-message" class="error"></div>
+  </div>
+
+  <script>
+    function login() {
+      // Vaste gebruikersnaam en wachtwoord voor demo (gebruik deze methode niet voor een echte applicatie)
+      const correctUsername = "taaitaai";
+      const correctPassword = "kruidnoot";
+
+      // Invoer van de gebruiker
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Controleren of de invoer correct is
+      if (username === correctUsername && password === correctPassword) {
+        alert("Inloggen geslaagd!");
+        // Hier kun je de gebruiker naar een andere pagina leiden
+        window.location.href = "https://sites.google.com/view/het-dagboek-van-puzzel-piet/de-reis";
+      } else {
+        document.getElementById("error-message").textContent = "Ongeldige gebruikersnaam of wachtwoord";
+      }
+    }
+  </script>
+
+</body>
+</html>
